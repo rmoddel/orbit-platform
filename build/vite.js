@@ -266,6 +266,13 @@ export function createBrowserViteConfig({
       // them; inlined, the small ones would all load with the first lookup.
       assetsInlineLimit: (file) =>
         file.includes('/wikidata_places/') ? false : undefined,
+      rollupOptions: {
+        input: {
+          main: 'index.html',
+          campaign: 'campaign.html',
+          admin: 'admin.html',
+        },
+      },
     },
   };
 }
